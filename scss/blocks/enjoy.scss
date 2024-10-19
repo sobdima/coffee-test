@@ -1,0 +1,111 @@
+.enjoy {
+    margin-bottom: 100px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+
+.enjoy__block {
+    width: 100%;
+    background-image: url("/Coffee-House/assets/img/img-hero.jpg");
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+    border-radius: 40px;
+
+    display: flex;
+    justify-content: flex-start;
+}
+
+.enjoy__text-block {
+    margin: 100px 0 100px 100px;
+    width: 530px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    gap: 40px;
+
+    @include media-tablet {
+        margin: 100px 0 100px 60px;
+    }
+    @include media-tablet-transit {
+        margin: 60px 16px;
+    }
+}
+
+h1 {
+    font-size: 7.2rem;
+    color: $body-color;
+    line-height: 105%;
+    font-weight: 600;
+
+    @include media-tablet-transit {
+        font-size: 4.2rem;
+        line-height: 4.8rem;
+    }
+
+    .accent {
+        @include accent;
+        font-size: 7.2rem;
+
+        @include media-tablet-transit {
+            font-size: 4.2rem;
+            line-height: 4.8rem;
+        }
+    }
+}
+
+.enjoy__text {
+    @include text;
+    font-weight: 300;
+    color: $body-color;
+}
+
+.enjoy__button {
+    @include button;
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+    overflow: hidden;
+    cursor: pointer;
+    @include media-desktop-transit {
+        cursor: default;
+    }
+
+    .button__text {
+        @include text;
+        font-weight: 600;
+        color: $text-dark;
+        @include media-desktop-transit {
+            cursor: default;
+        }
+    }
+
+    .button__icon {
+        opacity: 0;
+        width: 0;
+        transition: opacity 0.3s ease, width 0.3s ease;
+        @include media-desktop-transit {
+            opacity: 1;
+            width: 24px;
+        }
+    }
+}
+
+.enjoy__button:hover {
+    .button__text {
+        transition: transform 0.3s ease;
+    }
+
+    .button__icon {
+        opacity: 1;
+        width: 24px;
+    }
+
+    @include media-desktop-transit {
+        cursor: default;
+    }
+}

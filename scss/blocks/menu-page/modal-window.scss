@@ -1,0 +1,161 @@
+/*Modal Window Styles*/
+.fixed-dark {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    background-color: $text-dark;
+    opacity: 60%;
+    z-index: 2;
+}
+
+.modal__container {
+    display: none;
+    max-width: 800px;
+    margin: 0 40px;
+    position: absolute;
+    top: 198px;
+    padding: 16px;
+    border-radius: 40px;
+    /* display: flex; */
+    gap: 20px;
+    background-color: $body-color;
+    z-index: 3;
+
+    @include media-tablet-transit {
+        margin: 0 19px;
+    }
+    @media (max-width: 620px) {
+        gap: 0;
+    }
+}
+
+.modal__image img {
+    width: 310px;
+    height: 310px;
+    border-radius: 40px;
+    @media (max-width: 620px) {
+        display: none;
+    }
+}
+  
+.modal__description {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+  
+.modal__title {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+}
+
+.modal__title-name {
+    font-size: 24px;
+    font-weight: 600;
+    line-height: 30px;
+}
+
+.modal__size, .modal__additives {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+}
+
+.modal__title-description, .modal__size-name, .modal__additives-name {
+    font-size: 16px;
+    font-weight: 400;
+    line-height: 24px;
+}
+
+.tabs {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+}
+
+.tabs__button {
+    padding: 8px 16px 8px 8px;
+    display: flex;
+    gap: 8px;
+    align-items: center;
+    border: 1px solid $border-light;
+    border-radius: 100px;
+}
+
+.tabs__button_select {
+    background-color: $border-dark;
+    border: 1px solid $border-dark;
+}
+
+.tabs__icon {
+    width: 30px;
+    height: 30px;
+    border-radius: 100px;
+    background-color: $border-light;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 16px;
+    font-weight: 600;
+    line-height: 24px;
+}
+
+.tabs__icon_select {
+    background-color: $body-color;
+}
+
+.tabs__text {
+    font-size: 16px;
+    font-weight: 600;
+    line-height: 24px;
+}
+
+.tabs__text_select {
+    color: $body-color;
+}
+
+.total {
+    display: flex;
+    justify-content: space-between;
+}
+
+.total__text {
+    font-size: 24px;
+    font-weight: 600;
+    line-height: 30px;
+}
+
+.alert {
+    padding: 12px 0;
+    border-top: 1px solid $border-light;
+    display: flex;
+    gap: 8px;
+    align-items: center;
+}
+
+.alert__icon {
+    align-self: flex-start;
+}
+
+.alert__text {
+    font-size: 10px;
+    font-weight: 600;
+    line-height: 14px;
+    @media (max-width: 620px) {
+        text-align: justify;
+    }
+}
+
+.modal__button {
+    border: 1px solid $border-dark;
+    border-radius: 100px;
+    background: none;
+    font-size: 16px;
+    font-weight: 600;
+    line-height: 24px;
+    padding: 10px 0;
+}

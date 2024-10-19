@@ -1,0 +1,120 @@
+.footer {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 100px;
+    padding: 100px;
+    margin-bottom: 40px;
+    border-radius: 40px;
+    background-color: $border-dark;
+    @include media-desktop-transit {
+        flex-direction: column;
+        padding: 100px 60px;
+    }
+    @include media-tablet {
+        flex-direction: column;
+        /* padding: 100px 60px; */
+    }
+    @include media-tablet-transit {
+        padding: 60px 16px;
+        gap: 40px;
+    }
+}
+
+.footer__social-media-block {
+    flex: 1 1 calc(50% - 100px);
+    display: flex;
+    flex-direction: column;
+    gap: 40px;
+    @include media-desktop-transit {
+        width: 100%;
+    }
+    @include media-tablet-transit {
+        width: 100%;
+    }
+
+    .title {
+        @include section-title;
+        color: $body-color;
+
+        .accent {
+            @include accent;
+        }
+    }
+
+    .social-media-buttons {
+        display: flex;
+        gap: 12px;
+
+        .round-button {
+            @include round-button($border-light);
+            transition: all 0.5s ease;
+        }
+
+        .round-button:hover {
+            @include round-button($body-color);
+            background-color: $body-color;
+            svg path {
+                stroke: $text-dark;
+                @include media-desktop-transit {
+                    stroke: $body-color;
+                }
+            }
+
+            @include media-desktop-transit {
+                border-color: $border-light;
+                background-color: transparent;
+            }
+        }
+    }
+}
+
+.footer__contacts-block {
+    flex: 1 1 calc(50% - 100px);
+    display: flex;
+    flex-direction: column;
+    gap: 40px;
+    @include media-desktop-transit {
+        width: 100%;
+    }
+    @include media-tablet-transit {
+        width: 100%;
+    }
+
+    .contacts-block-title {
+        font-size: 2.4rem;
+        line-height: 30px;
+        color: $body-color;
+    }
+}
+
+.contacts-block-items {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    align-items: flex-start;
+
+    .contacts-block-items__item {
+        position: relative;
+        display: flex;
+        justify-content: flex-start;
+        gap: 8px;
+    }
+    .contacts-block-items__item_hover::after {
+        @include links-bottom-border-hover(default, $body-color);
+    }
+    .contacts-block-items__item_hover:hover::after {
+        width: 100%;
+        @include media-desktop-transit {
+            width: 0%;
+            cursor: default;
+        }
+    }
+
+    .contact-title {
+        font-size: 1.6rem;
+        line-height: 24px;
+        color: $body-color;
+    }
+}
+

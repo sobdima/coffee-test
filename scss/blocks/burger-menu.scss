@@ -1,0 +1,102 @@
+.burger {
+    display: none;
+    position: relative;
+    width: 44px;
+    height: 44px;
+    border: 1px solid $border-dark;
+    border-radius: 100px;
+    &::after {
+        content: "";
+        width: 16px;
+        height: 1.5px;
+        position: absolute;
+        bottom:calc( 18px - 0.75px );
+        right: calc( 50% - 8px ) ;
+        background-color: $text-dark; 
+        border-radius: 1.5px;
+        transition: all 0.3s ease;
+    }
+    &::before {
+        content: "";
+        width: 16px;
+        height: 1.5px;
+        position: absolute;
+        top:calc( 18px - 0.75px );
+        right: calc( 50% - 8px ) ;
+        background-color: $text-dark; 
+        border-radius: 1.5px;
+        transition: all 0.3s ease;
+    }
+    @include media-tablet {
+        display: block;
+    }
+}
+
+.burger_active::before {
+    transform: translate(0px, 3.2px) rotate(45deg);
+}
+.burger_active::after {
+    transform: translate(0px, -3.2px) rotate(-45deg);
+}
+
+.burger-menu {
+    position: fixed;
+    z-index: 1;
+    top: 104px;
+    right: 0;
+    width: 100%;
+    height: 100%;
+    padding: 60px 40px 0 40px;
+    background-color: $body-color;
+    transform: translateX(100%);
+    transition: all 0.8s ease;
+
+    .backing {
+        width: 100%;
+        height: 104px;
+        position: absolute;
+        top: -104px;
+    }
+
+    .burger__navigation {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: 60px;
+
+        a {
+            font-size: 3.2rem;
+            line-height: 40px;
+            color: $text-dark;
+        }
+    }
+
+    .burger__menu-button {
+        display: flex;
+        gap: 16px;
+        span {
+            font-size: 3.2rem;
+            line-height: 40px;
+            color: $text-dark;
+        }
+        .burger__menu-button-icon {
+            width: 40px;
+            height: 40px;
+        }
+    }
+
+    @include media-tablet {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: 100px;
+    }
+    @include media-mobile {
+        padding: 60px 16px 0 16px;
+        height: 724px;
+    }
+}
+
+.burger-menu.open {
+    transform: translateX(0);
+}

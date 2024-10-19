@@ -1,0 +1,21 @@
+@charset "UTF-8";
+
+@import "./colors";
+@import "./fonts";
+@import "./mixins";
+@import "./normalize";
+@import "./core";
+
+@import "./blocks/header.scss";
+@import "./blocks/burger-menu.scss";
+@import "./blocks/enjoy.scss";
+@import "./blocks/favorite-coffee.scss";
+@import "./blocks/about.scss";
+@import "./blocks/mobile-app.scss";
+@import "./blocks/footer.scss";
+
+@import "./blocks/menu-page/offer.scss";
+@import "./blocks/menu-page/coffee-chart.scss";
+@import "./blocks/menu-page/modal-window.scss";
+
+@import "./respons";

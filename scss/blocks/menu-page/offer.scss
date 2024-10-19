@@ -1,0 +1,112 @@
+.offer {
+    display: flex;
+    flex-direction: column;
+    gap: 40px;
+    align-items: center;
+    //padding: 0 280px 0 280px;
+    margin-bottom: 40px;
+
+    .title {
+        @include section-title;
+        text-align: center;
+        width: 800px;
+        @include media-tablet {
+            width: 100%;
+            letter-spacing: 2px;
+        }
+    
+        .accent {
+            @include accent;
+            @include media-desktop-transit {
+                display: inline;
+                font-style: oblique;
+            }
+        }
+    }
+}
+
+.offer__tabs {
+    display: flex;
+    gap: 16px;
+    @include media-tablet-transit {
+        gap: 8px;
+    }
+}
+
+.offer__tabs-button {
+    display: flex;
+    gap: 8px;
+    justify-content: flex-start;
+    align-items: center;
+
+    background: none;
+    border-radius: 100px;
+    border: 1px solid $border-light;
+    padding: 8px 16px 8px 8px;
+}
+
+.offer__tabs-button:hover {
+    transition: all 0.8s ease;
+    background-color: $border-dark;
+    border-color: $border-dark;
+
+    .tabs-button-icon {
+        background-color: $body-color;
+        @include media-desktop-transit {
+            background-color: $border-light;
+        }
+    }
+    .tabs-button-text {
+        color: $body-color;
+        @include media-desktop-transit {
+            color: $text-dark;
+        }
+    }
+
+    @include media-desktop-transit {
+        background: none; 
+        border: 1px solid $border-light;
+    }
+}
+
+.tabs-button-icon {
+    width: 30px;
+    height: 30px;
+    background-color: $border-light;
+    border-radius: 100px;
+
+    display: flex;
+    justify-content: center;
+    align-items: inherit;
+}
+
+.tabs-button-text {
+    font-size: 1.6rem;
+    line-height: 24px;
+    color: $text-dark;
+    font-weight: 600;
+}
+
+
+.offer__tabs-button_highlight {
+    background-color: $border-dark;
+    border-color: $border-dark;
+    &:hover {
+        @include media-desktop-transit {
+            background-color: $border-dark;
+            border-color: $border-dark;
+            .tabs-button-icon_highlight {
+                background-color: $body-color; 
+            }
+            .tabs-button-text_highlight {
+                color: $body-color; 
+            }
+        }
+    } 
+}
+.tabs-button-icon_highlight {
+    background-color: $body-color;
+}
+.tabs-button-text_highlight {
+    color: $body-color;
+}
